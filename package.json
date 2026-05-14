@@ -1,0 +1,33 @@
+{
+  "name": "love-story-site",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "start": "parcel src/index.html --port 3000",
+    "build": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.16.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "parcel": "^2.15.4",
+    "sass": "^1.89.0",
+    "typescript": "^5.9.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
