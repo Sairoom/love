@@ -1,5 +1,6 @@
-﻿import { useEffect, useMemo, useState, type CSSProperties } from "react";
-import { reasons } from "./data/reasons";
+﻿import { useEffect, useMemo, useState, type CSSProperties } from 'react';
+import { reasons } from './data/reasons';
+import aboutPhoto from 'url:./assets/about-photo.jpg';
 
 type NavItem = {
   label: string;
@@ -30,56 +31,56 @@ type HeartParticle = {
 type HeartStyle = CSSProperties & Record<`--${string}`, string>;
 
 const NAV_ITEMS: NavItem[] = [
-  { label: "Главная", href: "#hero" },
-  { label: "О нас", href: "#about" },
-  { label: "Первое свидание", href: "#first-date" },
-  { label: "Моменты", href: "#moments" },
-  { label: "100 причин", href: "#reasons" },
-  { label: "Будущее", href: "#future" },
+  { label: 'Главная', href: '#hero' },
+  { label: 'О нас', href: '#about' },
+  { label: 'Первое свидание', href: '#first-date' },
+  { label: 'Моменты', href: '#moments' },
+  { label: '100 причин', href: '#reasons' },
+  { label: 'Будущее', href: '#future' },
 ];
 
 const MOMENTS: Moment[] = [
   {
-    title: "Первое утро вместе",
-    text: "Когда просыпаешься рядом и понимаешь, что это уже лучший день.",
+    title: 'Первое утро вместе',
+    text: 'Когда просыпаешься рядом и понимаешь, что это уже лучший день.',
   },
   {
-    title: "Наше путешествие",
-    text: "Новые города, дороги и самые тёплые разговоры в пути.",
+    title: 'Наше путешествие',
+    text: 'Новые города, дороги и самые тёплые разговоры в пути.',
   },
   {
-    title: "Ночные звонки",
-    text: "Часы до рассвета, где мы делились мечтами и планами.",
+    title: 'Ночные звонки',
+    text: 'Часы до рассвета, где мы делились мечтами и планами.',
   },
   {
-    title: "Воскресные завтраки",
-    text: "Кофе, круассаны и маленькие традиции только для нас.",
+    title: 'Воскресные завтраки',
+    text: 'Кофе, круассаны и маленькие традиции только для нас.',
   },
   {
-    title: "Наша песня",
-    text: "Одна мелодия, которая всегда возвращает в любимый момент.",
+    title: 'Наша песня',
+    text: 'Одна мелодия, которая всегда возвращает в любимый момент.',
   },
   {
-    title: "Звёздное небо",
-    text: "Вечера, где тишина говорила о самом главном.",
+    title: 'Звёздное небо',
+    text: 'Вечера, где тишина говорила о самом главном.',
   },
 ];
 
 const FUTURE_PLANS: FutureCard[] = [
   {
-    emoji: "🏡",
-    title: "Наш дом",
-    text: "Место, где каждое утро начинается с улыбки, объятий и любимой музыки.",
+    emoji: '🏡',
+    title: 'Наш дом',
+    text: 'Место, где каждое утро начинается с улыбки, объятий и любимой музыки.',
   },
   {
-    emoji: "🌍",
-    title: "Путешествия",
-    text: "Новые города, закаты и воспоминания, которые останутся с нами навсегда.",
+    emoji: '🌍',
+    title: 'Путешествия',
+    text: 'Новые города, закаты и воспоминания, которые останутся с нами навсегда.',
   },
   {
-    emoji: "💖",
-    title: "Вместе навсегда",
-    text: "Каждый день выбирать друг друга, поддерживать и любить еще сильнее.",
+    emoji: '💖',
+    title: 'Вместе навсегда',
+    text: 'Каждый день выбирать друг друга, поддерживать и любить еще сильнее.',
   },
 ];
 
@@ -110,13 +111,13 @@ function App() {
     }
 
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         setActiveReason(null);
       }
     };
 
-    window.addEventListener("keydown", handleEscape);
-    return () => window.removeEventListener("keydown", handleEscape);
+    window.addEventListener('keydown', handleEscape);
+    return () => window.removeEventListener('keydown', handleEscape);
   }, [isReasonModalOpen]);
 
   return (
@@ -124,12 +125,12 @@ function App() {
       <div className="hearts-bg" aria-hidden="true">
         {hearts.map((heart) => {
           const style: HeartStyle = {
-            "--left": `${heart.left}%`,
-            "--size": `${heart.size}px`,
-            "--duration": `${heart.duration}s`,
-            "--delay": `${heart.delay}s`,
-            "--drift": `${heart.drift}px`,
-            "--opacity": `${heart.opacity}`,
+            '--left': `${heart.left}%`,
+            '--size': `${heart.size}px`,
+            '--duration': `${heart.duration}s`,
+            '--delay': `${heart.delay}s`,
+            '--drift': `${heart.drift}px`,
+            '--opacity': `${heart.opacity}`,
           };
 
           return (
@@ -175,14 +176,16 @@ function App() {
               <p className="section-kicker">о нас</p>
               <h2>О нас</h2>
               <p>
-                С того самого момента, как ты вошла в мою жизнь, все стало теплее и ярче. Каждый день рядом с тобой наполнен смыслом, радостью и спокойствием.
+                С того самого момента, как ты вошла в мою жизнь, все стало теплее и ярче. Каждый
+                день рядом с тобой наполнен смыслом, радостью и спокойствием.
               </p>
               <p>
-                Ты делаешь обычные моменты особенными, а особенные - незабываемыми. С тобой я понял, что значит любить по-настоящему.
+                Ты делаешь обычные моменты особенными, а особенные - незабываемыми. С тобой я понял,
+                что значит любить по-настоящему.
               </p>
             </div>
             <div className="photo-placeholder photo-placeholder--framed">
-              <span>Фото-заглушка 1</span>
+              <img src={aboutPhoto} alt="Наше фото" className="about-photo" />
             </div>
           </div>
         </section>
@@ -197,11 +200,10 @@ function App() {
               <h2>Первое свидание</h2>
               <p className="date-badge">Дата: 03.05.2022</p>
               <p>
-                Помню каждую деталь того вечера. Твою улыбку, которая заставила сердце биться быстрее, и разговор, который не хотелось заканчивать.
+                Помню каждую деталь той встречи. Твою улыбку, и твой смех с хрюком) которая
+                заставила сердце биться быстрее, и разговор, который не хотелось заканчивать.
               </p>
-              <p>
-                Это был не просто день - это было начало нашей невероятной истории.
-              </p>
+              <p>Это был не просто день - это было начало нашей невероятной истории.</p>
             </div>
           </div>
         </section>
@@ -239,7 +241,7 @@ function App() {
                   <button
                     key={index}
                     type="button"
-                    className={`reason-card${isActive ? " is-active" : ""}`}
+                    className={`reason-card${isActive ? ' is-active' : ''}`}
                     onClick={() => setActiveReason(index)}
                     aria-pressed={isActive}
                     title={reason}
@@ -273,7 +275,8 @@ function App() {
         <section className="section quote">
           <div className="container">
             <blockquote>
-              "С тобой я хочу прожить не просто жизнь, а тысячу жизней, где в каждой из них буду любить тебя еще сильнее."
+              "С тобой я хочу прожить не просто жизнь, а тысячу жизней, где в каждой из них буду
+              любить тебя еще сильнее."
             </blockquote>
             <p>Навсегда твой ♡</p>
           </div>
