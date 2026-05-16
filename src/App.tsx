@@ -1,6 +1,7 @@
 ﻿import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { reasons } from './data/reasons';
 import aboutPhoto from 'url:./assets/about-photo.jpg';
+import vibePhoto from 'url:./assets/vibe.jpg';
 
 type NavItem = {
   label: string;
@@ -185,7 +186,7 @@ function App() {
               </p>
             </div>
             <div className="photo-placeholder photo-placeholder--framed">
-              <img src={aboutPhoto} alt="Наше фото" className="about-photo" />
+              <img src={vibePhoto} alt="Наше фото" className="about-photo" />
             </div>
           </div>
         </section>
@@ -193,7 +194,7 @@ function App() {
         <section id="first-date" className="section first-date">
           <div className="container first-date__grid">
             <div className="photo-placeholder photo-placeholder--wide">
-              <span>Фото-заглушка 2</span>
+              <img src={aboutPhoto} alt="Первое свидание" className="about-photo" />
             </div>
             <div className="first-date__content">
               <p className="section-kicker">особенный момент</p>

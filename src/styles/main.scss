@@ -228,7 +228,7 @@ p {
 }
 
 .about__grid {
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 0.85fr 0.95fr;
 }
 
 .about__content {
@@ -257,10 +257,10 @@ p {
 }
 
 .photo-placeholder--framed {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
   border-radius: 34px;
   border: 12px solid rgba(255, 204, 224, 0.86);
-  min-height: 430px;
+  min-height: 0px;
   padding: 0;
   overflow: hidden;
   background: transparent;
@@ -278,7 +278,12 @@ p {
 }
 
 .photo-placeholder--wide {
+  border-radius: 34px;
+  border: 12px solid rgba(255, 204, 224, 0.86);
   min-height: 390px;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
 }
 
 .first-date__content {
@@ -588,7 +593,6 @@ blockquote {
     grid-template-columns: 1fr;
   }
 
-  .photo-placeholder--framed,
   .photo-placeholder--wide {
     min-height: 340px;
   }
@@ -634,7 +638,6 @@ blockquote {
     min-height: 72vh;
   }
 
-  .photo-placeholder--framed,
   .photo-placeholder--wide {
     min-height: 290px;
   }
