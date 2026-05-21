@@ -1,7 +1,13 @@
 ﻿import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { reasons } from './data/reasons';
-import aboutPhoto from 'url:./assets/about-photo.jpg';
-import vibePhoto from 'url:./assets/vibe.jpg';
+import aboutPhoto from './assets/about-photo.jpg';
+import vibePhoto from './assets/vibe.jpg';
+import sonPhoto from './assets/son.jpg';
+import dojd from './assets/dojd.jpg';
+import labubu from  './assets/labubu.jpg'
+import ngph from './assets/ng.jpg'
+import stryk from './assets/stryk.png'
+import nuniks from './assets/nuniks.jpg'
 
 type NavItem = {
   label: string;
@@ -11,6 +17,8 @@ type NavItem = {
 type Moment = {
   title: string;
   text: string;
+  image?: string;
+  imagePosition?: string;
 };
 
 type FutureCard = {
@@ -43,27 +51,35 @@ const NAV_ITEMS: NavItem[] = [
 const MOMENTS: Moment[] = [
   {
     title: 'Первое утро вместе',
-    text: 'Когда просыпаешься рядом и понимаешь, что это уже лучший день.',
+    text: 'Когда просыпаешься рядом и понимаешь, что это уже лучший день',
+    image: sonPhoto,
   },
   {
-    title: 'Наше путешествие',
-    text: 'Новые города, дороги и самые тёплые разговоры в пути.',
+    title: 'Наши прогулки',
+    text: 'Новые места, вкусная еда и все это в сопровождении любимой кисы',
+    image: dojd
   },
   {
-    title: 'Ночные звонки',
-    text: 'Часы до рассвета, где мы делились мечтами и планами.',
+    title: 'Наши игры',
+    text: 'Часы напрлет в нашем любимом робло и прочих имбульках)',
+    image: labubu
   },
   {
-    title: 'Воскресные завтраки',
-    text: 'Кофе, круассаны и маленькие традиции только для нас.',
+    title: 'Наши праздники',
+    text: 'Большие и не очень, но главное что вместе с тобой',
+    image: ngph,
+    imagePosition: 'center 65%',
   },
   {
     title: 'Наша песня',
-    text: 'Одна мелодия, которая всегда возвращает в любимый момент.',
+    text: 'Одна мелодия, которая всегда возвращает в любимый момент',
+    image: stryk
   },
   {
-    title: 'Звёздное небо',
-    text: 'Вечера, где тишина говорила о самом главном.',
+    title: 'Наши меми',
+    text: 'Наши ахуенные шутки, 67 и толсти нюни',
+    image: nuniks,
+    imagePosition: 'center 63%',
   },
 ];
 
@@ -218,7 +234,22 @@ function App() {
               {MOMENTS.map((moment) => (
                 <article key={moment.title} className="moment-card">
                   <div className="moment-card__image">
-                    <span>Фото-заглушка</span>
+                    {moment.image ? (
+                      <div 
+                        className="moment-card__bg"
+                        style={{
+                          backgroundImage: `url(${moment.image})`,
+                          backgroundPosition: moment.imagePosition || 'center center',
+                          backgroundSize: 'cover',
+                          backgroundRepeat: 'no-repeat',
+                          width: '100%',
+                          height: '100%',
+                          borderRadius: '28px'
+                        }}
+                      />
+                    ) : (
+                      <span>Фото-заглушка</span>
+                    )}
                   </div>
                   <div className="moment-card__body">
                     <h3>{moment.title}</h3>
